@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+
+# Logs
+logs/
+
+# Streamlit
+.streamlit/
+
+# Vector DB + data
+vector_store/
+data/raw/
