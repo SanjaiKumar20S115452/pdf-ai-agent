@@ -5,12 +5,10 @@ from app.core.config import LLM_MODEL
 from app.core.logging import setup_logger
 
 logger = setup_logger(__name__)
-
 llm = ChatOpenAI(
     model=LLM_MODEL,
     temperature=0.2
 )
-
 def generate_answer(question: str, documents: list[Document]) -> str:
     context = "\n\n".join(
         [
@@ -18,7 +16,6 @@ def generate_answer(question: str, documents: list[Document]) -> str:
             for doc in documents
         ]
     )
-
     prompt = f"""
 You are a private enterprise knowledge assistant.
 

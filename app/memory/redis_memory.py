@@ -7,7 +7,6 @@ logger = setup_logger(__name__)
 
 redis_client = redis.from_url(REDIS_URL, decode_responses=True)
 
-
 def save_message(session_id: str, role: str, content: str) -> None:
     """
     Save one message into Redis conversation history.

@@ -7,12 +7,10 @@ from app.services.ingestion_service import load_documents, chunk_documents
 
 logger = setup_logger(__name__)
 
-
 def get_embeddings():
     return HuggingFaceEmbeddings(
         model_name=LOCAL_EMBEDDING_MODEL
     )
-
 
 def build_vector_store() -> FAISS:
     documents = load_documents()
@@ -29,7 +27,6 @@ def build_vector_store() -> FAISS:
 
     logger.info("Vector store built and saved")
     return vector_store
-
 
 def load_vector_store() -> FAISS:
     index_path = VECTOR_STORE_DIR / "index.faiss"
